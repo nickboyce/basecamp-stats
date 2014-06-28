@@ -2,10 +2,14 @@ var config = require('./config');
 var http = require('http');
 var request = require('request');
 var express = require("express");
+var coffeeMiddleware = require('coffee-middleware');
 var app = express();
 
 // static files
 app.use(express.static(__dirname + '/public'));
+
+// Coffeescript
+app.use(coffeeMiddleware({ src: __dirname + '/public', compress: true }));
 
 // proxy the API requests
 app.get('/proxy*', function(req, res) {

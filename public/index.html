@@ -5,7 +5,20 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
-    <script src="static/js/app.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.4/handlebars.js"></script>
+
+
+    <script id="person-template" type="text/x-handlebars-template">
+      {{#each people}}
+        <li id="person-{{id}}">{{name}}</li>
+      {{/each}}
+    </script>
+
+
+    <script src="static/js/models/person.js"></script>
+    <script src="static/js/views/people_list_view.js"></script>
+    <script src="static/js/collections/people_collection.js"></script>
+
   </head>
   <body>
     <h1>Basecamp hall of shame</h1>
@@ -14,9 +27,7 @@
     <div class="row">
       <div class="col-md-4">
         <h4>People</h4>
-        <ul id="people">
-          <li>Loading...</li>
-        </ul>
+        <div id="people-list-container"></div>
       </div>
       <div class="col-md-4">
         <h4>Projects</h4>
@@ -35,6 +46,9 @@
     </div>
 
 
+
+
+    <script src="static/js/app.js"></script>
 
   </body>
 </html>
