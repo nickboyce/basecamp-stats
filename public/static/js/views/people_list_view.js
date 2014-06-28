@@ -9,7 +9,7 @@ BCX.PeopleListView = Backbone.View.extend({
 
   render: function () {
     this.$el.html(this.template({
-      people: this.collection.toJSON()
+      people: this.collection.sort().toJSON()
     }));
   }
 
