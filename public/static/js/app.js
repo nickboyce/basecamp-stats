@@ -4,11 +4,16 @@ var app = {
   models: {},
   views: {},
   initialize: function() {
-    app.collections.people.fetch();
+    app.collections.people.fetch({reset: true});
   }
 };
 
+
+// Models
 app.collections.people = new BCX.PeopleCollection();
+
+
+// People List
 app.views.peopleListView = new BCX.PeopleListView({
   el: "#people-list-container",
   collection: app.collections.people,
@@ -17,9 +22,7 @@ app.views.peopleListView = new BCX.PeopleListView({
 
 
 
-
-
-app.views.peopleListView.listenTo(app.collections.people, 'reset', this.render);
+// app.views.peopleListView.listenTo(app.collections.people, 'reset', this.render);
 
 
 // function getPeople() {
