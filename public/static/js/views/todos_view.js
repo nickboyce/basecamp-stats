@@ -5,7 +5,6 @@ BCX.TodosView = Backbone.View.extend({
   initialize: function () {
     this.listenTo(this.collection, "reset change", this.render);
     this.template = Handlebars.compile($("#todos-template").html());
-    console.log(this.collection);
   },
 
   render: function () {

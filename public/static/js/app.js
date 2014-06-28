@@ -33,11 +33,11 @@ app.views.projectsView = new BCX.ProjectsView({
 });
 
 // TodoLists List
-// app.views.todoListsView = new BCX.TodoListsView({
-//   el: "#todolists-container",
-//   collection: app.collections.todoLists,
-//   template: "todolists-template"
-// });
+app.views.todoListsView = new BCX.TodoListsView({
+  el: "#todolists-container",
+  collection: app.collections.todoLists,
+  template: "todolists-template"
+});
 
 // Todos List
 app.views.todosView = new BCX.TodosView({
