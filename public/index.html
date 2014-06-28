@@ -30,6 +30,10 @@
       <h4>Todo lists <small class="text-muted">({{todoLists.length}})</small></h4>
     </script>
 
+    <script id="todos-template" type="text/x-handlebars-template">
+      <h4>Todos <small class="text-muted">({{todos.length}})</small></h4>
+    </script>
+
     <script src="static/js/models/person.js"></script>
     <script src="static/js/views/people_view.js"></script>
     <script src="static/js/views/projects_view.js"></script>
@@ -47,6 +51,7 @@
       <div class="col-md-4">
         <div id="projects-container"></div>
         <div id="todolists-container"></div>
+        <div id="todos-container"></div>
       </div>
       <div class="col-md-4">
         <h4>Misc</h4>

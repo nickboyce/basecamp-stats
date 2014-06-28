@@ -38,7 +38,12 @@ app.views.todoListsView = new BCX.TodoListsView({
   template: "projects-template"
 });
 
-
+// Todos List
+app.views.todosView = new BCX.TodosView({
+  el: "#todos-container",
+  collection: app.collections.todos,
+  template: "projects-template"
+});
 
 // app.views.peopleListView.listenTo(app.collections.people, 'reset', this.render);
 
