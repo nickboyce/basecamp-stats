@@ -14,9 +14,9 @@
           <img src="{{avatar_url}}" class="img-circle">
           <strong>{{name}}</strong>
           {{#if outstanding_todos}}
-            <small class="muted">({{outstanding_todos.count}})</small>
+            <small class="text-muted">({{outstanding_todos.count}})</small>
           {{else}}
-            <small class="muted">...</small>
+            <small class="text-muted">...</small>
           {{/if}}
         </li>
       {{/each}}
