@@ -10,8 +10,9 @@
 
     <script id="person-template" type="text/x-handlebars-template">
       {{#each people}}
-        <li id="person-{{id}}">
-          {{name}}
+        <li id="person-{{id}}" class="person">
+          <img src="{{avatar_url}}" class="img-circle">
+          <strong>{{name}}</strong>
           {{#if outstanding_todos}}
             <small class="muted">({{outstanding_todos.count}})</small>
           {{else}}
@@ -21,10 +22,21 @@
       {{/each}}
     </script>
 
+    <script id="projects-template" type="text/x-handlebars-template">
+      <h4>Projects <small class="text-muted">({{projects.length}})</small></h4>
+    </script>
+
+    <script id="todolists-template" type="text/x-handlebars-template">
+      <h4>Todo lists <small class="text-muted">({{todoLists.length}})</small></h4>
+    </script>
 
     <script src="static/js/models/person.js"></script>
-    <script src="static/js/views/people_list_view.js"></script>
+    <script src="static/js/views/people_view.js"></script>
+    <script src="static/js/views/projects_view.js"></script>
+    <script src="static/js/views/todo_lists_view.js"></script>
     <script src="static/js/collections/people_collection.js"></script>
+    <script src="static/js/collections/projects_collection.js"></script>
+    <script src="static/js/collections/todo_lists_collection.js"></script>
 
   </head>
   <body>
@@ -33,14 +45,8 @@
 
     <div class="row">
       <div class="col-md-4">
-        <h4>People</h4>
-        <div id="people-list-container"></div>
-      </div>
-      <div class="col-md-4">
-        <h4>Projects</h4>
-        <ul id="projects">
-          <li>Loading...</li>
-        </ul>
+        <div id="projects-container"></div>
+        <div id="todolists-container"></div>
       </div>
       <div class="col-md-4">
         <h4>Misc</h4>
@@ -48,7 +54,12 @@
           <li>Most active projects</li>
           <li>Least active projects</li>
           <li>Oldest open ticket</li>
+          <li>Unassigned tasks</li>
         </ul>
+      </div>
+      <div class="col-md-4">
+        <h4>Tasks</h4>
+        <div id="people-container" class="list-unstyled"></div>
       </div>
     </div>
 

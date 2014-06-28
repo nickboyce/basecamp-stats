@@ -12,6 +12,4 @@ BCX.PeopleCollection = Backbone.Collection.extend({
       return false;
     }
   }
-
-
 });

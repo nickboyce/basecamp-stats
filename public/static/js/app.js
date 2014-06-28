@@ -5,19 +5,37 @@ var app = {
   views: {},
   initialize: function() {
     app.collections.people.fetch({reset: true});
+    app.collections.projects.fetch({reset: true});
+    app.collections.todoLists.fetch({reset: true});
   }
 };
 
 
-// Models
+// Collections
 app.collections.people = new BCX.PeopleCollection();
+app.collections.projects = new BCX.ProjectsCollection();
+app.collections.todoLists = new BCX.TodoListsCollection();
 
 
 // People List
-app.views.peopleListView = new BCX.PeopleListView({
-  el: "#people-list-container",
+app.views.peopleView = new BCX.PeopleView({
+  el: "#people-container",
   collection: app.collections.people,
   template: "person-template"
+});
+
+// Projects List
+app.views.projectsView = new BCX.ProjectsView({
+  el: "#projects-container",
+  collection: app.collections.projects,
+  template: "projects-template"
+});
+
+// TodoLists List
+app.views.todoListsView = new BCX.TodoListsView({
+  el: "#todolists-container",
+  collection: app.collections.todoLists,
+  template: "projects-template"
 });
 
 
