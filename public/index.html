@@ -10,7 +10,14 @@
 
     <script id="person-template" type="text/x-handlebars-template">
       {{#each people}}
-        <li id="person-{{id}}">{{name}}</li>
+        <li id="person-{{id}}">
+          {{name}}
+          {{#if outstanding_todos}}
+            <small class="muted">({{outstanding_todos.count}})</small>
+          {{else}}
+            <small class="muted">...</small>
+          {{/if}}
+        </li>
       {{/each}}
     </script>
 
