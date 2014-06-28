@@ -1,8 +1,6 @@
 # Simple stats for your Basecamp account
 
-### To install:
-
-#### Add config to the root
+### To install, add config to the root
 
 ```javascript
 var config = {}
