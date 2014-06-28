@@ -3,7 +3,7 @@ var BCX = BCX || {};
 BCX.PeopleListView = Backbone.View.extend({
 
   initialize: function () {
-    this.listenTo(this.collection, "change reset add remove", this.render);
+    this.listenTo(this.collection, "reset change", this.render);
     this.template = Handlebars.compile($("#person-template").html());
   },
 
@@ -12,8 +12,5 @@ BCX.PeopleListView = Backbone.View.extend({
       people: this.collection.toJSON()
     }));
   }
-
-
-
 
 });
