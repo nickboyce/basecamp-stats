@@ -9,8 +9,19 @@ BCX.TodosView = Backbone.View.extend({
 
   render: function () {
     this.$el.html(this.template({
-      todos: this.collection.toJSON()
+      todos: this.getRemainingTodos(this.collection)
     }));
+  },
+
+
+  getRemainingTodos: function () {
+    // var todos = this.collection.pluck("todos");
+    // if (todos) {
+    //   todos = _.pluck(todos, "remaining");
+    //   todos = _.flatten(todos);
+
+    // }
+    return [];
   }
 
 });

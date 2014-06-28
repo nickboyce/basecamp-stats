@@ -4,7 +4,7 @@ var app = {
   models: {},
   views: {},
   initialize: function() {
-    app.collections.people.fetch({reset: true});
+    // app.collections.people.fetch({reset: true});
     app.collections.projects.fetch({reset: true});
     app.collections.todoLists.fetch({reset: true});
   }
@@ -35,14 +35,14 @@ app.views.projectsView = new BCX.ProjectsView({
 app.views.todoListsView = new BCX.TodoListsView({
   el: "#todolists-container",
   collection: app.collections.todoLists,
-  template: "projects-template"
+  template: "todolists-template"
 });
 
 // Todos List
 app.views.todosView = new BCX.TodosView({
   el: "#todos-container",
-  collection: app.collections.todos,
-  template: "projects-template"
+  collection: app.collections.todoLists,
+  template: "todos-template"
 });
 
 // app.views.peopleListView.listenTo(app.collections.people, 'reset', this.render);
