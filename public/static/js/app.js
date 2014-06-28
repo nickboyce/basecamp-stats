@@ -2,7 +2,10 @@
 var app = {
   collections: {},
   models: {},
-  views: {}
+  views: {},
+  initialize: function() {
+    app.collections.people.fetch();
+  }
 };
 
 app.collections.people = new BCX.PeopleCollection();
@@ -13,7 +16,6 @@ app.views.peopleListView = new BCX.PeopleListView({
 });
 
 
-app.collections.people.fetch();
 
 
 
