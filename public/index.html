@@ -6,6 +6,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.4/handlebars.js"></script>
+    <script src="static/js/lib/jquery.timeago.js"></script>
 
 
     <script id="person-template" type="text/x-handlebars-template">
@@ -32,10 +33,17 @@
 
     <script id="todos-template" type="text/x-handlebars-template">
       <h4>Todos <small class="text-muted">({{todos.length}})</small></h4>
+      {{#each todos}}
+        <li id="todo-{{id}}" class="todo">
+          <strong>{{content}}</strong>
+          <small class="text-muted">({{timeago created_at}})</small>
+        </li>
+      {{/each}}
     </script>
 
     <script src="static/js/models/person.js"></script>
     <script src="static/js/models/todolist.js"></script>
+    <script src="static/js/models/todo.js"></script>
     <script src="static/js/views/people_view.js"></script>
     <script src="static/js/views/projects_view.js"></script>
     <script src="static/js/views/todo_lists_view.js"></script>
@@ -43,6 +51,8 @@
     <script src="static/js/collections/people_collection.js"></script>
     <script src="static/js/collections/projects_collection.js"></script>
     <script src="static/js/collections/todo_lists_collection.js"></script>
+    <script src="static/js/collections/todos_collection.js"></script>
+    <script src="static/js/helpers/view_helpers.js"></script>
 
   </head>
   <body>

@@ -6,9 +6,7 @@ BCX.TodoList = Backbone.Model.extend({
   },
 
   initialize: function () {
-    // console.log(this);
     if (!this.get("todos")) {
-      console.log("getting todos for list");
       this.fetch();
     }
   }
