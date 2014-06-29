@@ -7,10 +7,19 @@ if (process.env.NODE_ENV === "production") {
 var http = require('http');
 var request = require('request');
 var express = require("express");
+var sass = require("node-sass");
 var app = express();
 
 // static files
 app.use(express.static(__dirname + '/public'));
+
+
+app.use(sass.middleware({
+  src: __dirname + '/sass',
+  dest: __dirname + '/public',
+  debug: true,
+  outputStyle: 'compressed'
+}));
 
 // proxy the API requests
 app.get('/proxy*', function(req, res) {
