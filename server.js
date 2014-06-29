@@ -2,7 +2,7 @@ var config = {};
 if (!process.env.NODE_ENV === "production") {
   config = require('./config');
 } else {
-  config.auth = { "user" : process.env.BCX_USERNAME, "pass" : process.env.BCX_USERNAME };
+  config.auth = { "user" : process.env.BCX_USER, "pass" : process.env.BCX_PASS };
 }
 var http = require('http');
 var request = require('request');
