@@ -1,4 +1,9 @@
-var config = require('./config');
+var config = {};
+if (!process.env.NODE_ENV === "production") {
+  config = require('./config');
+} else {
+  config.auth = { "user" : process.env.BCX_USERNAME, "pass" : process.env.BCX_USERNAME };
+}
 var http = require('http');
 var request = require('request');
 var express = require("express");
