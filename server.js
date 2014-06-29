@@ -7,7 +7,6 @@ if (!process.env.NODE_ENV === "production") {
 var http = require('http');
 var request = require('request');
 var express = require("express");
-var coffeeMiddleware = require('coffee-middleware');
 var app = express();
 
 // static files
