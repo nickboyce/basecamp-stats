@@ -12,9 +12,6 @@ var app = express();
 // static files
 app.use(express.static(__dirname + '/public'));
 
-// Coffeescript
-app.use(coffeeMiddleware({ src: __dirname + '/public', compress: true }));
-
 // proxy the API requests
 app.get('/proxy*', function(req, res) {
   // strange way to get to the path!
