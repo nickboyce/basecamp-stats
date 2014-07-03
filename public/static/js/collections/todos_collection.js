@@ -13,13 +13,20 @@ BCX.TodosCollection = Backbone.Collection.extend({
   },
 
   populateCollection: function () {
-    todos = _.map(this.parentCollection.toJSON(), function(todoList) {
-      if (todoList.todos) {
-        return todoList.todos.remaining
+    var todos = []
+
+    _.each(this.parentCollection.toJSON(), function(todoList) {
+      if (todoList.todos && todoList.todos.remaining) {
+        todos.push(todoList.todos.remaining);
       }
     });
-    this.set(_.flatten(todos));
-    // not sure why i need to do this
-    this.trigger("change");
+
+    todos = _.flatten(todos);
+
+    if (todos.length) {
+      this.set(todos);
+      // not sure why i need to do this
+      this.trigger("change");
+    }
   }
 });

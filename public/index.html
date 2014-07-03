@@ -36,7 +36,7 @@
       {{#each todos}}
         <li id="todo-{{id}}" class="todo">
           <strong>{{content}}</strong><br />
-          <small class="text-muted">({{timeago created_at}})</small>
+          <small class="text-muted">({{timeago created_at}} by {{creator.name}})</small>
         </li>
       {{/each}}
     </script>
